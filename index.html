@@ -190,19 +190,19 @@
         </div>
       </div>
       <div class="offerte-form">
-        <form id="quoteAdvancedForm">
+        <form id="quoteAdvancedForm" action="https://formspree.io/f/xojyekgj" method="post">
           <div class="form-group">
-            <input type="text" id="fullname" placeholder="Naam *" required>
+            <input type="text" id="fullname" name="fullname" placeholder="Naam *" required>
           </div>
           <div class="form-group">
-            <input type="tel" id="phoneNumber" placeholder="Telefoon *" required>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Telefoon *" required>
           </div>
           <div class="form-group">
-            <input type="email" id="emailAddress" placeholder="E-mailadres *" required>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="E-mailadres *" required>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <select id="dienstSelect">
+              <select id="dienstSelect" name="dienstSelect">
                 <option value="">Dienst *</option>
                 <option>Woning Schoonmaak</option>
                 <option>Kantoor Schoonmaak</option>
@@ -211,19 +211,19 @@
               </select>
             </div>
             <div class="form-group">
-              <input type="text" id="oppervlakte" placeholder="bijv. 80 m²" value="">
+              <input type="text" id="oppervlakte" name="oppervlakte" placeholder="bijv. 80 m²" value="">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <input type="text" id="stadGemeente" placeholder="Dorp / Stad / Gemeente *" required>
+              <input type="text" id="stadGemeente" name="stadGemeente" placeholder="Dorp / Stad / Gemeente *" required>
             </div>
             <div class="form-group">
-              <input type="text" id="gewensteDatum" placeholder="Gewenste datum (dd-mm-jjjj)">
+              <input type="text" id="gewensteDatum" name="gewensteDatum" placeholder="Gewenste datum (dd-mm-jjjj)">
             </div>
           </div>
           <div class="form-group">
-            <textarea rows="3" id="extraInfo" placeholder="Extra informatie: vertel ons meer over uw schoonmaakwensen..."></textarea>
+            <textarea rows="3" id="extraInfo" name="extraInfo" placeholder="Extra informatie: vertel ons meer over uw schoonmaakwensen..."></textarea>
           </div>
           <button type="submit" class="btn-primary" style="width:100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Offerte Aanvragen</button>
           <div id="formFeedbackAdvanced"></div>
