@@ -29,16 +29,19 @@ document.getElementById('headerQuoteBtn').addEventListener('click', () => scroll
 document.getElementById('heroOfferBtn').addEventListener('click', () => scrollToSection('offerte'));
 document.getElementById('heroServicesBtn').addEventListener('click', () => scrollToSection('diensten'));
 
-// Advanced form handling
 const form = document.getElementById('quoteAdvancedForm');
 const feedbackDiv = document.getElementById('formFeedbackAdvanced');
-form.addEventListener('submit', (e) => {
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  // Your existing validation
   const name = document.getElementById('fullname').value.trim();
   const phone = document.getElementById('phoneNumber').value.trim();
   const email = document.getElementById('emailAddress').value.trim();
   const dienst = document.getElementById('dienstSelect').value;
   const stad = document.getElementById('stadGemeente').value.trim();
+
   if (!name || !phone || !email || !dienst || !stad) {
     feedbackDiv.innerHTML = '<div class="response-msg" style="background:#FEE2E2; color:#B91C1C;">Vul alle verplichte velden in (*).</div>';
     return;
@@ -47,10 +50,28 @@ form.addEventListener('submit', (e) => {
     feedbackDiv.innerHTML = '<div class="response-msg" style="background:#FEE2E2; color:#B91C1C;">Geldig e-mailadres vereist.</div>';
     return;
   }
+
   feedbackDiv.innerHTML = '<div class="response-msg"><i class="fas fa-spinner fa-pulse"></i> Aanvraag wordt verzonden...</div>';
-  setTimeout(() => {
-    feedbackDiv.innerHTML = '<div class="response-msg" style="background:#DCFCE7; color:#166534;"><i class="fas fa-check-circle"></i> Bedankt! Uw offerteaanvraag is ontvangen. Wij nemen binnen 24u contact op.</div>';
-    form.reset();
+
+  // Prepare form data
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      feedbackDiv.innerHTML = '<div class="response-msg" style="background:#DCFCE7; color:#166534;"><i class="fas fa-check-circle"></i> Bedankt! Uw offerteaanvraag is ontvangen. Wij nemen binnen 24u contact op.</div>';
+      form.reset();
+      setTimeout(() => feedbackDiv.innerHTML = '', 5000);
+    } else {
+      throw new Error('Formspree error');
+    }
+  } catch (error) {
+    feedbackDiv.innerHTML = '<div class="response-msg" style="background:#FEE2E2; color:#B91C1C;">Er is een fout opgetreden. Probeer het later opnieuw of stuur een e-mail.</div>';
     setTimeout(() => feedbackDiv.innerHTML = '', 5000);
-  }, 800);
+  }
 });
