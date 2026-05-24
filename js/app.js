@@ -35,7 +35,7 @@ const feedbackDiv = document.getElementById('formFeedbackAdvanced');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Your existing validation
+
   const name = document.getElementById('fullname').value.trim();
   const phone = document.getElementById('phoneNumber').value.trim();
   const email = document.getElementById('emailAddress').value.trim();
