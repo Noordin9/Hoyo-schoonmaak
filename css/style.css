@@ -532,6 +532,123 @@ body {
   gap: 16px;
 }
 
+/* Custom select */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-select-trigger {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 14px 48px 14px 18px;
+  border-radius: 32px;
+  border: 1px solid #cfdfed;
+  background: white;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1E2A32;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.custom-select-trigger.is-placeholder {
+  color: #8A9BB0;
+}
+
+.custom-select-trigger:hover {
+  border-color: #0F766E;
+}
+
+.custom-select-trigger:focus-visible,
+.custom-select.open .custom-select-trigger {
+  outline: none;
+  border-color: #0F766E;
+  box-shadow: 0 0 0 3px #0F766E20;
+}
+
+.custom-select-trigger::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230F766E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat center / 14px;
+  transition: transform 0.2s;
+}
+
+.custom-select.open .custom-select-trigger::after {
+  transform: rotate(180deg);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  background: white;
+  border: 1px solid #eef2f6;
+  border-radius: 20px;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.15s, transform 0.15s, visibility 0s linear 0.15s;
+}
+
+.custom-select.open .custom-select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.custom-select-options li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 500;
+  color: #1E2A32;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.custom-select-options li:hover,
+.custom-select-options li:focus {
+  background: #F0FDFA;
+  color: #0F766E;
+}
+
+.custom-select-options li.is-selected {
+  color: #0F766E;
+  font-weight: 700;
+}
+
+.custom-select-options li.is-selected::after {
+  content: "✓";
+  font-weight: 700;
+}
+
+.custom-select.is-invalid .custom-select-trigger {
+  border-color: #DC2626;
+}
+
 @media (max-width: 900px) {
   .contact-offerte-wrapper {
     grid-template-columns: 1fr;

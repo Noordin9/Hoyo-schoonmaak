@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="js/custom.js"></script>
 <body>
 
 <header class="header">
@@ -202,13 +203,13 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <select id="dienstSelect" name="dienstSelect">
-                <option value="">Dienst *</option>
-                <option>Woning Schoonmaak</option>
-                <option>Kantoor Schoonmaak</option>
-<!--                <option>VVE Schoonmaak</option>-->
-                <option>Opleveringsschoonmaak</option>
-              </select>
+              <select id="dienstSelect" name="dienstSelect" required>
+              <option value="" disabled selected hidden>Dienst *</option>
+              <option>Woning Schoonmaak</option>
+              <option>Kantoor Schoonmaak</option>
+              <!-- <option>VVE Schoonmaak</option> -->
+              <option>Opleveringsschoonmaak</option>
+            </select>
             </div>
             <div class="form-group">
               <input type="text" id="oppervlakte" name="oppervlakte" placeholder="bijv. 80 m²" value="">
