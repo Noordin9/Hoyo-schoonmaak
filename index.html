@@ -181,7 +181,7 @@
         <p>Vul het formulier in en we nemen binnen 24 uur contact met u op voor een vrijblijvende offerte op maat.</p>
         <div class="contact-details">
           <p><i class="fas fa-phone-alt"></i> <strong>Telefoon:</strong>0618686265</p>
-          <p><i class="fas fa-envelope"></i> <strong>E-mail:</strong> info@hoyoschoonmaak.nl</p>
+          <p><i class="fas fa-envelope"></i> <strong>E-mail:</strong> info@hoyo-schoonmaak.nl</p>
           <p><i class="fas fa-map-marker-alt"></i> <strong>Werkgebied:</strong> Achterhoek</p>
           <p><i class="fas fa-clock"></i> <strong>Beschikbaarheid:</strong> Ma - Za, 08:30 - 20:00</p>
         </div>
@@ -237,8 +237,8 @@
   <div class="container">
     <div class="footer-inner">
       <div><h4>Hoyo Schoonmaak</h4><p>Professioneel schoonmaakbedrijf in de Achterhoek. Vakkundig & betrouwbaar.</p></div>
-      <div><h4>Contact</h4><p><i class="fas fa-phone"></i> 0618 686 265<br><i class="fas fa-envelope"></i> info@hoyoschoonmaak.nl</p></div>
-      <div><h4>Volg ons</h4><i class="fab fa-facebook" style="margin-right: 12px;"></i><i class="fab fa-instagram"></i></div>
+      <div><h4>Contact</h4><p><i class="fas fa-phone"></i> 0618 686 265<br><i class="fas fa-envelope"></i> info@hoyo-schoonmaak.nl</p></div>
+<!--      <div><h4>Volg ons</h4><i class="fab fa-facebook" style="margin-right: 12px;"></i><i class="fab fa-instagram"></i></div>-->
     </div>
     <div class="copyright">© 2025 Hoyo Schoonmaak — Schoonmaakbedrijf Achterhoek</div>
   </div>
@@ -248,31 +248,68 @@
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": "https://www.hoyo-schoonmaak.nl/#bedrijf",
     "name": "Hoyo Schoonmaak",
-    "description": "Professioneel schoonmaakbedrijf in de Achterhoek voor woningen en kantoren.",
-    "image": "img/icon.png",
+    "description": "Professioneel schoonmaakbedrijf in de Achterhoek. Woningschoonmaak, kantoorschoonmaak en opleveringsschoonmaak in Zutphen, Doetinchem, Winterswijk en omgeving.",
+    "url": "https://www.hoyo-schoonmaak.nl/",
+    "logo": "https://www.hoyo-schoonmaak.nl/img/icon.png",
+    "image": "https://www.hoyo-schoonmaak.nl/img/icon.png",
     "telephone": "+31618686265",
-    "email": "info@hoyoschoonmaak.nl",
+    "email": "info@hoyo-schoonmaak.nl",
+    "priceRange": "Vanaf €30 per uur",
     "address": {
       "@type": "PostalAddress",
+      "postalCode": "7211",
       "addressLocality": "Eefde",
       "addressRegion": "Gelderland",
       "addressCountry": "NL"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.165,
+      "longitude": 6.222
+    },
     "areaServed": [
-      "Eefde","Doetinchem", "Zutphen", "Winterswijk", "Groenlo", "Lichtenvoorde", "Borculo", "Ruurlo", "Zelhem", "Vorden", "De Achterhoek", "Achterhoek"
+      {"@type": "City", "name": "Eefde"},
+      {"@type": "City", "name": "Zutphen"},
+      {"@type": "City", "name": "Doetinchem"},
+      {"@type": "City", "name": "Winterswijk"},
+      {"@type": "City", "name": "Groenlo"},
+      {"@type": "City", "name": "Ruurlo"},
+      {"@type": "City", "name": "Zelhem"},
+      {"@type": "City", "name": "Warnsveld"},
+      {"@type": "City", "name": "Joppe"},
+      {"@type": "City", "name": "Lochem"},
+      {"@type": "City", "name": "Twello"},
+      {"@type": "City", "name": "Wilp"},
+      {"@type": "City", "name": "Harfsen"},
+      {"@type": "City", "name": "Epse"},
+      {"@type": "City", "name": "Brummen"},
+      {"@type": "City", "name": "Vorden"},
+      {"@type": "City", "name": "Bathmen"},
+      {"@type": "City", "name": "Borculo"},
+      {"@type": "AdministrativeArea", "name": "Achterhoek"}
     ],
-    "priceRange": "€30",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "08:30",
-        "closes": "20:00"
-      }
-    ],
-    "url": "https://www.hoyo-schoonmaak.nl/"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Schoonmaakdiensten",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Woningschoonmaak / huishoudelijke hulp"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kantoorschoonmaak"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Verhuis- en opleveringsschoonmaak"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dieptereiniging / voorjaarsschoonmaak"}}
+      ]
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:30",
+      "closes": "20:00"
+    }],
+    "sameAs": [
+      "https://maps.app.goo.gl/AG2NzBR1suhZDPhp7"
+    ]
   }
 </script>
 </body>
